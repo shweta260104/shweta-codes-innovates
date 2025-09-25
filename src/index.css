@@ -2,9 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Shweta Jadhav Portfolio Design System - Modern purple gradient theme with orange accents */
 
 @layer base {
   :root {
@@ -17,26 +15,43 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary: Deep purple gradient system */
+    --primary: 252 83% 57%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 260 73% 67%;
+    --primary-dark: 248 83% 47%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary: Light purple/lavender */
+    --secondary: 252 47% 94%;
+    --secondary-foreground: 252 83% 57%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Accent: Vibrant orange for CTAs */
+    --accent: 32 95% 58%;
+    --accent-foreground: 0 0% 100%;
+    --accent-hover: 28 95% 52%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Muted tones */
+    --muted: 252 20% 96%;
+    --muted-foreground: 252 10% 45%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 252 20% 90%;
+    --input: 252 20% 95%;
+    --ring: 252 83% 57%;
 
-    --radius: 0.5rem;
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(252 83% 57%) 0%, hsl(248 90% 66%) 50%, hsl(260 73% 67%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(252 83% 57%) 0%, hsl(260 73% 67%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(252 20% 98%) 100%);
+    
+    /* Shadows with purple tint */
+    --shadow-primary: 0 10px 40px -10px hsl(252 83% 57% / 0.3);
+    --shadow-card: 0 4px 24px -4px hsl(252 83% 57% / 0.08);
+    --shadow-elevated: 0 20px 60px -10px hsl(252 83% 57% / 0.25);
+
+    --radius: 1rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -65,8 +80,10 @@ All colors MUST be HSL.
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
+    --primary: 252 83% 67%;
     --primary-foreground: 222.2 47.4% 11.2%;
+    --primary-light: 260 73% 77%;
+    --primary-dark: 248 83% 57%;
 
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
@@ -74,8 +91,9 @@ All colors MUST be HSL.
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 32 95% 68%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent-hover: 28 95% 62%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
@@ -101,5 +119,57 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Hero styles */
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+  
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+
+  /* Decorative elements */
+  .floating-shape {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .floating-shape:nth-child(2) {
+    animation-delay: -2s;
+  }
+  
+  .floating-shape:nth-child(3) {
+    animation-delay: -4s;
+  }
+
+  /* Glass morphism effect */
+  .glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+  66% {
+    transform: translateY(-10px) rotate(-5deg);
   }
 }
