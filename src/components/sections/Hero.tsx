@@ -1,6 +1,6 @@
 import { ArrowRight, Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import profileImage from '@/assets/shweta-profile.jpg';
+import profileImage from '@/assets/shweta-actual-profile.jpg';
 
 const Hero = () => {
   const scrollToSection = (href: string) => {
